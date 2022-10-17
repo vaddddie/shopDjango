@@ -1,0 +1,86 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'main/styles.css' %}">
+</head>
+<body>
+  <header>
+    <a href="{% url 'index' %}"><div id="logo" onclick="slowScroll('#top')">
+      <span>WITCH SHABBATH</span>
+    </div></a>
+    <div id="about">
+      <a href="#">МЕНЮ</a>
+      <a href="#delivery" onclick="slowScroll('#contacts')">ДОСТАВКА</a>
+      <a href="#contact" onclick="slowScroll('#contacts')">КОНТАКТЫ</a>
+      <a href="#feedback" onclick="slowScroll('#contacts')">НАПИШИТЕ НАМ</a>
+    </div>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <div id="contacts">
+    <a name="feedback"><center><h5>Обратная связь</h5></center></a>
+    <form id="form_input" method="post">
+      {% csrf_token %}
+      <label for="name">Имя <span>*</span></label><br>
+      {{ letter_form.name }}<br>
+      <label for="email">Ваша почта <span>*</span></label><br>
+			{{ letter_form.email }}<br>
+			<label for="message">Сообщение <span>*</span></label><br>
+			{{ letter_form.message }}<br>
+			<input type="submit" id="mess_send" class="btn">
+    </form>
+  </div>
+
+  <div id="faq">
+    <div>
+      <a name="delivery"><span class="title">ДОСТАВКА И ОПЛАТА</span><br></a>
+      <span class="heading">Стоимость доставки</span>
+      <p>рассчитывается менеджером после оформления заказа</p>
+      <span class="heading">Доставка по району (до 2км)</span>
+      <p>бесплатно при заказе от 5000₽ (до подъезда)</p>
+      <span class="heading">Доставка в пределах МКАДа.</span>
+      <p>рассчитывается индивидуально</p>
+    </div>
+    <div>
+      <span class="title">СОБЫТИЯ</span><br>
+      <span class="heading">Открытие второй кондитерская на Тверском бульваре</span>
+      <p>На Тверском бульваре начала работать вторая точка французских кондитерских кафе WITCH SHABBATH</p>
+      <span class="heading">МАСТЕР КЛАСС</span>
+      <p>С радостью объявляем о начале проведения МАСТЕР-КЛАССОВ на нашей кухне 👩🏻‍🍳👨🏻‍🍳 2апреля (суббота) мастер-класс «СЛОЕНОЕ И ПЕСОЧНОЕ ТЕСТО»</p>
+    </div>
+    <div>
+      <a name="contact"><span class="title">КОНТАКТЫ</span><br></a>
+      <span class="heading">WITCH SHABBATH</span>
+      <p>ул. Остоженка, 27, корп. 3</p>
+      <p>Тверской бул., 14, стр. 5</p>
+      <span class="heading">email</span>
+      <p>witch.shabbath.ru</p>
+      <span class="heading">Телефон</span>
+      <p>+7 (926) 626-52-28</p>
+    </div>
+  </div>
+
+  
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+</body>
+</html>

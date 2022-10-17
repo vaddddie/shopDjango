@@ -1,0 +1,45 @@
+{% extends 'main/baseNv.html' %}
+
+{% block title %}WITCH SHABBATH{% endblock %}
+{% block content %}
+  <div id="top">
+    <h1>ДЕСЕРТ</h1>
+    <h3>КАК ПУТЬ К СЛАДКОЙ ЖИЗНИ!</h3>
+  </div>
+
+  <div id="main">
+    <div class="intro">
+      <a name="возможности"><h2>Запретный плод сладок!</h2></a>
+      <span>Большой выбор всего, на что вы можете положить глаз</span>
+    </div>
+    <div class="text">
+        <p style="text-align: center;">
+            Кондитерская и кафе WITCH SHABBATH — недостижимый Рай в самом центре Москвы.
+            <br/>
+
+            Десерты, свежая выпечка, салаты и супы. Селективный чай Dammann прямиком из Франции и Speciality coffee.
+            <br/>
+
+            Только натуральные и свежие ингредиенты, приятный сервис и особенная атмосфера. И, конечно, доставка и десерты на заказ! Ждём вас ♥
+        </p>
+    </div>
+  </div>
+ 
+  <div id="overview">
+    <a name="меню"><h2>МЕНЮ</h2></a>
+    <h4>Тощих людей легче похитить! Не подвергайте себя риску! Кушайте как следует!!!</h4>
+    <div class="container">
+      {% if items %}
+        {% for el in items %}
+          <div class="img">
+            <img src="{{ el.image.url }}" alt="">
+            <span>{{ el.name }}</span>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <div class="btn-store__div">
+      <a href="#">СДЕЛАТЬ ЗАКАЗ</a>
+    </div>
+  </div>
+{% endblock %}
