@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{% block title %}{% endblock %}</title>
-  <link rel="stylesheet" href="{% static 'main/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css.css' %}">
 </head>
 <body>
   <header>
@@ -15,7 +15,7 @@
       <span>WITCH SHABBATH</span>
     </div></a>
     <div id="about">
-      <a href="#">МЕНЮ</a>
+      <a href="{% url 'shop' %}">ЦЕНЫ</a>
       <a href="#delivery" onclick="slowScroll('#contacts')">ДОСТАВКА</a>
       <a href="#contact" onclick="slowScroll('#contacts')">КОНТАКТЫ</a>
       <a href="#feedback" onclick="slowScroll('#contacts')">НАПИШИТЕ НАМ</a>

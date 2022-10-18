@@ -240,16 +240,19 @@ header.fixed #logo {
     margin: 0 auto;
     height: 100%;
     width: 200px;
-    background-color: #d99353;
-    font-size: 44px;
+    background-color: #e0a066;
+    font-size: 32px;
     padding: 20px;
-    border-radius: 35px;
+    border-radius: 20px;
     border: 2px solid white;
     color: white;
     text-decoration: none;
 }
 
-#overview .btn-store__div a:hover {color: #d6d6d6}
+#overview .btn-store__div a:hover {
+    background-color: #bf8046;
+    color: #d6d6d6
+    }
 
 #overview .container {
     height: 100%;
@@ -414,9 +417,59 @@ h1, h2, h3, h4, h5 {
 }
 
 /* =============================================== */
+/* SHOP */
+
+#shop_overview {
+  float: left;
+  background-image: url(./overview_shop_background.jpg);
+
+  background-blend-mode: multiply;
+  background-color: #403f40;
+  background-size: cover;
+  background-attachment: fixed;
+
+  padding: 100px 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+#shop_overview h2 {font-size: 4em}
+#overview h4 {color: #ccc; font-size: 1.5em}
+
+@media (min-width: 561px) {
+  #shop_overview h2 {font-size: 4em}
+}
+
+@media (max-width: 560px) {
+  #shop_overview h2 {font-size: 2em}
+}
+
+#shop_overview .container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding-top: 50px;
+}
+
+#shop_overview .container .main_part {
+    height: 100%;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#shop_overview .container .rest_part {
+    height: 100%;
+    width: auto;
+    flex: auto;
+}
+
+
+/* =============================================== */
 
 .debug {
     border: 2px solid red;
 }
+
 
 

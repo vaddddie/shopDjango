@@ -9,7 +9,7 @@
 
   <div id="main">
     <div class="intro">
-      <a name="возможности"><h2>Запретный плод сладок!</h2></a>
+      <a><h2>Запретный плод сладок!</h2></a>
       <span>Большой выбор всего, на что вы можете положить глаз</span>
     </div>
     <div class="text">
@@ -26,7 +26,7 @@
   </div>
  
   <div id="overview">
-    <a name="меню"><h2>МЕНЮ</h2></a>
+    <a><h2>МЕНЮ</h2></a>
     <h4>Тощих людей легче похитить! Не подвергайте себя риску! Кушайте как следует!!!</h4>
     <div class="container">
       {% if items %}
@@ -39,7 +39,7 @@
       {% endif %}
     </div>
     <div class="btn-store__div">
-      <a href="#">СДЕЛАТЬ ЗАКАЗ</a>
+      <a href="{% url 'shop' %}">СДЕЛАТЬ ЗАКАЗ</a>
     </div>
   </div>
 {% endblock %}
